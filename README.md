@@ -32,7 +32,7 @@ A full-stack AI chat application built as a technical assessment to demonstrate 
 - Next.js  
 - React  
 - TailwindCSS  
-- TypeScript (optional)
+- JSX
 
 ---
 

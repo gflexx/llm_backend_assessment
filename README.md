@@ -1,4 +1,4 @@
-# LM Chat App — Technical Assessment
+# LM Chat App
 
 A full-stack AI chat application built as a technical assessment to demonstrate Python (FastAPI) and frontend (Next.js + TailwindCSS).
 

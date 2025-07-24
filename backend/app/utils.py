@@ -19,12 +19,13 @@ def get_gemini_response(user_prompt: str) -> str:
     """
     llm_model = genai.GenerativeModel()
     
+    print(llm_model.__class__.__name__)
+    
     base_prompt = (
         "You are a helpful assistant that explains concepts clearly and briefly.\n"
         "Answer the following question:\n"
     )
     prompt = base_prompt + user_prompt.strip()
-    print(prompt)
 
     try:
         response = llm_model.generate_content(prompt)

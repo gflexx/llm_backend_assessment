@@ -27,6 +27,7 @@ A full-stack AI chat application built as a technical assessment to demonstrate 
 - Uvicorn  
 - Pydantic  
 - dotenv
+- google-generativeai
 
 **Frontend:**  
 - Next.js  
@@ -45,3 +46,11 @@ cd backend
 cp .env.template .env
 pip install -r requirements.txt
 uvicorn app.main:app --reload
+```
+### 🔹 Frontend (NextJS)
+
+```bash
+cd frontend
+npm i
+npm run dev
+```

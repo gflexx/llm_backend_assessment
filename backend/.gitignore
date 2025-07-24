@@ -5,11 +5,7 @@ __pycache__/
 
 # Virtual environments
 .env/
-.venv/
-venv/
-ENV/
 env/
-venv.bak/
 
 # Environment vars
 .env

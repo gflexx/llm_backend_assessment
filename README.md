@@ -11,15 +11,10 @@ A full-stack AI chat application built as a technical assessment to demonstrate 
   - Receive real-time, structured responses from a Language Model (LLM)
   - View past query history
 
-- Create a secure and well-structured API using FastAPI:
+- Create API using FastAPI:
   - Validate user input
-  - Handle queries via LLM or mock responses
-  - Expose clear documentation via Swagger
-
-- Demonstrate strong attention to:
-  - Code quality and structure
-  - Component-based, modern frontend design
-  - Usability, responsiveness, and error handling
+  - Handle queries via LLM
+  - Expose documentation via Swagger
 
 ---
 **Backend:**  

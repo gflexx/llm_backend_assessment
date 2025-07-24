@@ -1,10 +1,35 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function ChatInterface() {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingHistory, setIsLoadingHistory] = useState(true);
+
+    // Fetch chat history on page load
+    useEffect(() => {
+        const fetchChatHistory = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/chat/history');
+                if (response.ok) {
+                    const history = await response.json();
+                    setMessages(history);
+
+                } else {
+                    console.error('Failed to fetch chat history');
+
+                }
+            } catch (error) {
+                console.error('Error fetching chat history:', error);
+
+            } finally {
+                setIsLoadingHistory(false);
+            }
+        };
+
+        fetchChatHistory();
+    }, []);
 
     const sendMessage = async () => {
         if (input.trim() && !isLoading) {
@@ -78,16 +103,23 @@ function ChatInterface() {
 
     return (
         <div className="flex flex-col h-screen bg-gray-100">
-            <div className="bg-white shadow-sm border-b px-6 py-4">
-                <h1 className="text-xl font-semibold text-gray-800">Chat with your AI Assistant</h1>
-            </div>
+
 
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {messages.length === 0 && (
+                {isLoadingHistory ? (
+                    <div className="text-center text-gray-500 mt-8">
+                        <div className="flex items-center justify-center space-x-2">
+                            <div className="w-4 h-4 bg-gray-400 rounded-full animate-bounce"></div>
+                            <div className="w-4 h-4 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                            <div className="w-4 h-4 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                            <p className="ml-2">Loading chat history...</p>
+                        </div>
+                    </div>
+                ) : messages.length === 0 ? (
                     <div className="text-center text-gray-500 mt-8">
                         <p>Start a conversation with the AI, Ask me something!</p>
                     </div>
-                )}
+                ) : null}
 
                 {messages.map((message) => (
                     <div

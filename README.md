@@ -51,3 +51,18 @@ cd frontend
 npm i
 npm run dev
 ```
+
+### 🔹 Getting Your Gemini API Key (Free Tier)
+
+To use the chatbot, you'll need an API key for Google's Gemini model.
+
+### Recommended Method: Google AI Studio
+
+- Visit [Google AI Studio](https://makersuite.google.com/)
+- Sign in with your Google account
+- Click on **"Get API key"** or navigate to the **"API keys"** section
+- Agree to the terms and conditions if prompted
+- Click **"Create API key"**
+- Copy and securely save your API key
+
+Set the key To your .env file GEMINI_API_KEY

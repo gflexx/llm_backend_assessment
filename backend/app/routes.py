@@ -1,19 +1,16 @@
 from .schemas import UserRequest, LLMResponse
 from fastapi import APIRouter
 
-
-import os 
-from dotenv import load_dotenv
-load_dotenv()
-
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+from .utils import get_gemini_response
 
 router = APIRouter()
 
 
-@router.post("/chat", response_model=LLMResponse)
+@router.post("/chat/", response_model=LLMResponse)
 async def ask_question(data: UserRequest):
     """
-    takes userinput then requests LLM
+    takes user input then requests LLM assistant
     """
-    return {"answer": f"You asked: {data.question} {GEMINI_API_KEY}"}
+    llm_response = get_gemini_response(data.question)
+
+    return {"answer": f"{llm_response}"}

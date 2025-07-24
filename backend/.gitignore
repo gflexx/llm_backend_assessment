@@ -18,5 +18,3 @@ env/
 *.pyo
 *.pyd
 
-# IDE
-.vscode/

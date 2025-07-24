@@ -1,0 +1,12 @@
+# Environment variables
+.env
+*.env
+
+# Python cache and logs
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+.vscode/

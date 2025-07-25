@@ -47,7 +47,7 @@ uvicorn app.main:app --reload
 ### 🔹 Frontend (NextJS)
 
 ```bash
-cd frontend
+cd frontend/chat-app
 npm i
 npm run dev
 ```

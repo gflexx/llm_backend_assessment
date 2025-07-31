@@ -66,3 +66,10 @@ To use the chatbot, you'll need an API key for Google's Gemini model.
 - Copy and securely save your API key
 
 Set the key To your .env file GEMINI_API_KEY
+
+## API Documentation
+
+Once the Flask server is running, you can access the interactive Swagger UI at:
+
+http://127.0.0.1:8000/docs
+
